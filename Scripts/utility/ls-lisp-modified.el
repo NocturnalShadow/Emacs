@@ -1,29 +1,15 @@
-;;; ls-lisp-no-total.el --- ls-lisp.el with cut out "total" line
+;;; ls-lisp-modified.el --- A slight modification of standard ls-lisp.el 
+
+;;; Modifications:
+;;; 	- Cut out "total" line
+;;; 	- Removed "." line in directory listing
 
 ;;; ls-lisp.el --- emulate insert-directory completely in Emacs Lisp
-
-;; Copyright (C) 1992, 1994, 2000-2016 Free Software Foundation, Inc.
-
-;; Author: Sebastian Kremer <sk@thp.uni-koeln.de>
-;; Modified by: Francis J. Wright <F.J.Wright@maths.qmw.ac.uk>
-;; Maintainer: emacs-devel@gnu.org
-;; Keywords: unix, dired
-;; Package: emacs
-
-;; This file is part of GNU Emacs.
 
 ;; GNU Emacs is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
@@ -776,6 +762,6 @@ All ls time options, namely c, t and u, are handled."
 	      file-size)
     (format " %6s" (file-size-human-readable file-size))))
 
-(provide 'ls-lisp-no-total)
+(provide 'ls-lisp-modified)
 
-;;; ls-lisp-no-total.el ends here
+;;; ls-lisp-modified.el ends here

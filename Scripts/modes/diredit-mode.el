@@ -1,15 +1,20 @@
-(require 'ls-lisp-no-total)
+(require 'ls-lisp-modified)
 
 (defun dired-window () 
 	(nth 1 (window-list)))
 
 (defun dired-select (&rest args)
-	(interactive)
-       (let ((dired-window (dired-window)))
-         (set-window-buffer dired-window
-                            (find-file-noselect 
-                             (dired-get-file-for-visit)))
-         (select-window dired-window))
+       	(interactive "P")
+	(let ((find-file-run-dired t)
+	      (file (dired-get-file-for-visit)))
+       	(if (file-directory-p file)
+	    (call-interactively 'dired-find-file args)
+	    (let ((dired-window (dired-window)))
+	      (set-window-buffer dired-window
+				 (find-file-noselect 
+				  (dired-get-file-for-visit)))
+	      (select-window dired-window))
+	  ))
 )
 
 ;(wdired-change-to-wdired-mode)
@@ -41,7 +46,6 @@
 		'("%d/%m/%Y %H:%M" "%d/%m/%Y %H:%M") 
 		ls-lisp-use-localized-time-format 
 		t)
-	;(set-window-dedicated-p (get-buffer-window (current-buffer)) t)
 	(diredit-mode 1)
 )
 
