@@ -1,3 +1,5 @@
+;; Enable all disabled commands
+(setq disabled-command-function nil)
 
 ;; Turn the annoying "beep" sound off
 (setq ring-bell-function 'ignore)

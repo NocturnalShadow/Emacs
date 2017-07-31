@@ -1,6 +1,9 @@
 (require 'redo+)
 (require 'text-utils)
 
+(autoload 'dired-jump-other-window "dired-x"
+       "Directory edit in other window." t)
+
 ;; Keymaps
 (defvar common-mode-map
  (let ((map (make-sparse-keymap)))
@@ -56,9 +59,10 @@
 	(define-key map (kbd "C-e")	'execute-extended-command)
 	(define-key map (kbd "M-q")	'save-buffers-kill-terminal)
 	(define-key map (kbd "M-a")	'iconify-frame)
-	(define-key map (kbd "C-K")	'describe-key)
+	(define-key map (kbd "C-S-k")	'describe-key)
 
 	(define-key map (kbd "C-t")	'shell)
+	(define-key map (kbd "C-g") 	'dired-jump-other-window)	
  map)
 "The common keymap.")
 

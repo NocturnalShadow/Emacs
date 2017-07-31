@@ -12,6 +12,7 @@
 
 (defun on-minibuffer-setup ()
 	(minibuffer-mode 1)
+	(linum-mode 0)
 )
 
 (add-hook 'minibuffer-setup-hook 	'on-minibuffer-setup)
